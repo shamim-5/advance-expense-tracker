@@ -7,7 +7,7 @@ export const getTransactions = async () => {
 };
 
 export const addTransaction = async (data) => {
-  const res = await axios.post("/transactions", data);
+  const res = await axios.post("/transactionsa", data);
 
   return res.data;
 };
@@ -20,5 +20,6 @@ export const editTransaction = async (id, data) => {
 
 export const deleteTransaction = async (id) => {
   const res = axios.delete(`transactions/${id}`);
+
   return res.data;
 };

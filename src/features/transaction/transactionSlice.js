@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getTransaction, addTransaction, deleteTransaction, editTransaction } from "./transactionAPI";
+import { getTransactions, addTransaction, editTransaction, deleteTransaction } from "./transactionAPI";
 
 const initialState = {
   transactions: [],
@@ -10,7 +10,7 @@ const initialState = {
 
 // async thunks
 export const fetchTransactions = createAsyncThunk("transaction/fetchTransactions", async () => {
-  const transaction = await getTransaction();
+  const transaction = await getTransactions();
   return transaction;
 });
 
