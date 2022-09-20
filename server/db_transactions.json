@@ -1,22 +1,34 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "name": "Salary from Google",
+      "name": "Sallery from Google",
       "type": "income",
-      "amount": 1000000
+      "amount": 1100000,
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Family Expenses",
+      "name": "Sallery from Facebook",
       "type": "expense",
-      "amount": 200000
+      "amount": 1000000,
+      "id": 2
+    },
+    {
+      "name": "Abar Bolen4",
+      "type": "expense",
+      "amount": 115000,
+      "id": 3
     },
     {
       "name": "Abar Bolen",
+      "type": "income",
+      "amount": 5000,
+      "id": 4
+    },
+    {
+      "name": "Abar Bolen2",
       "type": "expense",
-      "amount": "290",
-      "id": 3
+      "amount": 10200,
+      "id": 5
     }
   ]
 }

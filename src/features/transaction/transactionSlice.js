@@ -6,6 +6,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   error: "",
+  editing: {},
 };
 
 // async thunks
@@ -19,7 +20,7 @@ export const createTransaction = createAsyncThunk("transaction/createTransaction
   return transaction;
 });
 
-export const changeTransaction = createAsyncThunk("transaction/changeTransaction", async (id, data) => {
+export const changeTransaction = createAsyncThunk("transaction/changeTransaction", async ({id, data}) => {
   const transaction = await editTransaction(id, data);
   return transaction;
 });
@@ -33,6 +34,15 @@ export const removeTransaction = createAsyncThunk("transaction/removeTransaction
 const transactionSlice = createSlice({
   name: "transaction",
   initialState,
+  reducers: {
+    editActive: (state, action) => {
+      state.editing = action.payload;
+    },
+    editInActive: (state) => {
+      state.editing = {};
+    },
+  },
+
   extraReducers: (builder) => {
     builder
       .addCase(fetchTransactions.pending, (state) => {
@@ -103,3 +113,4 @@ const transactionSlice = createSlice({
 });
 
 export default transactionSlice.reducer;
+export const {editActive, editInActive } = transactionSlice.actions;

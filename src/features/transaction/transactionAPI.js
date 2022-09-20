@@ -7,13 +7,13 @@ export const getTransactions = async () => {
 };
 
 export const addTransaction = async (data) => {
-  const res = await axios.post("/transactionsa", data);
+  const res = await axios.post("/transactions", data);
 
   return res.data;
 };
 
 export const editTransaction = async (id, data) => {
-  const res = await axios.put(`transactions/${id}`, data);
+  const res = await axios.put(`/transactions/${id}`, data);
 
   return res.data;
 };
